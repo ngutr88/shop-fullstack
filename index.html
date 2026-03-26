@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Online - Bán hàng</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">🛒 Shop Online</div>
+
+            <div class="nav-menu">
+                <button id="homeBtn" class="nav-link">Trang chủ</button>
+                <button id="productsBtn" class="nav-link">Sản phẩm</button>
+
+                <button id="cartBtn" class="nav-link">
+                    Giỏ hàng <span id="cartCount" class="badge">0</span>
+                </button>
+
+                <button id="ordersBtn" class="nav-link" style="display:none;">Đơn hàng</button>
+                <button id="adminBtn" class="nav-link" style="display:none;">Admin</button>
+                <button id="profileBtn" class="nav-link" style="display:none;">Tài khoản</button>
+                <button id="logoutBtn" class="nav-link" style="display:none;">Đăng xuất</button>
+                <button id="loginBtn" class="nav-link auth-btn">Đăng nhập</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <div class="container main-content">
+
+        <!-- Home Page -->
+        <section id="homePage" class="page" style="display:none;">
+            <div class="hero">
+                <h1>Chào mừng đến với Shop Online</h1>
+                <p>Mua sắm dễ dàng, quản lý sản phẩm tiện lợi, giao diện đẹp và hiện đại.</p>
+                <button class="btn btn-primary" onclick="loadProducts()">Mua ngay</button>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section id="loginPage" class="page" style="display:none;">
+            <div class="auth-card">
+                <h2>Đăng nhập</h2>
+                <form id="loginForm">
+                    <input type="text" id="loginUsername" placeholder="Tên đăng nhập" required>
+                    <input type="password" id="loginPassword" placeholder="Mật khẩu" required>
+                    <button type="submit" class="btn btn-primary btn-full">Đăng nhập</button>
+                </form>
+                <p style="margin-top: 12px; text-align:center;">
+                    Chưa có tài khoản?
+                    <a href="#" onclick="showPage('registerPage'); return false;">Đăng ký</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Register Page -->
+        <section id="registerPage" class="page" style="display:none;">
+            <div class="auth-card">
+                <h2>Đăng ký</h2>
+                <form id="registerForm">
+                    <input type="text" id="regUsername" placeholder="Tên đăng nhập" required>
+                    <input type="email" id="regEmail" placeholder="Email" required>
+                    <input type="text" id="regFullName" placeholder="Họ và tên" required>
+                    <input type="password" id="regPassword" placeholder="Mật khẩu" required>
+                    <input type="password" id="regConfirmPassword" placeholder="Xác nhận mật khẩu" required>
+                    <button type="submit" class="btn btn-primary btn-full">Đăng ký</button>
+                </form>
+                <p style="margin-top: 12px; text-align:center;">
+                    Đã có tài khoản?
+                    <a href="#" onclick="showPage('loginPage'); return false;">Đăng nhập</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Products Page -->
+        <section id="productsPage" class="page" style="display:none;">
+            <div class="products-header">
+                <h2>Sản phẩm</h2>
+                <input type="text" id="searchInput" class="search-box" placeholder="Tìm kiếm sản phẩm...">
+            </div>
+
+            <div id="productsList" class="products-grid"></div>
+        </section>
+
+        <!-- Product Detail Page -->
+        <section id="productDetailPage" class="page" style="display:none;">
+            <button class="btn btn-secondary" onclick="showPage('productsPage')">← Quay lại</button>
+            <div id="productDetail" class="product-detail"></div>
+        </section>
+
+        <!-- Cart Page -->
+        <section id="cartPage" class="page" style="display:none;">
+            <h2>Giỏ hàng</h2>
+
+            <div id="cartItems" class="cart-items"></div>
+
+            <div id="cartEmpty" class="empty-message" style="display:none;">
+                <p>Giỏ hàng của bạn đang trống.</p>
+                <button class="btn btn-primary" onclick="loadProducts()">Tiếp tục mua sắm</button>
+            </div>
+
+            <div id="cartSummary" style="display:none;">
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Tổng tiền hàng:</span>
+                        <span id="cartTotal">0 đ</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Phí vận chuyển:</span>
+                        <span>30.000 đ</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Thành tiền:</span>
+                        <span id="finalTotal">30.000 đ</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-full" onclick="proceedToCheckout()">Tiến hành thanh toán</button>
+            </div>
+        </section>
+
+        <!-- Checkout Page -->
+        <section id="checkoutPage" class="page" style="display:none;">
+            <h2>Thanh toán</h2>
+
+            <form id="checkoutForm">
+                <div class="form-section">
+                    <h3>Thông tin giao hàng</h3>
+                    <input type="text" id="fullName" placeholder="Họ và tên" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="tel" id="phone" placeholder="Số điện thoại" required>
+                    <textarea id="address" rows="3" placeholder="Địa chỉ nhận hàng" required></textarea>
+                </div>
+
+                <div class="form-section">
+                    <h3>Phương thức thanh toán</h3>
+                    <div class="payment-methods">
+                        <label><input type="radio" name="payment" value="cod" checked> Thanh toán khi nhận hàng</label>
+                        <label><input type="radio" name="payment" value="card"> Thẻ tín dụng</label>
+                        <label><input type="radio" name="payment" value="bank"> Chuyển khoản ngân hàng</label>
+                    </div>
+                </div>
+
+                <div id="cardPayment" style="display:none;">
+                    <div class="form-section">
+                        <h3>Thông tin thẻ</h3>
+                        <input type="text" id="cardNumber" placeholder="Số thẻ">
+                        <div class="form-row">
+                            <input type="text" id="cardExp" placeholder="MM/YY">
+                            <input type="text" id="cardCVV" placeholder="CVV">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <h3>Chi tiết đơn hàng</h3>
+                    <div id="orderItems"></div>
+                    <div class="summary-row total">
+                        <span>Tổng cộng:</span>
+                        <span id="orderTotal">0 đ</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Xác nhận đặt hàng</button>
+                <button type="button" class="btn btn-secondary btn-full" onclick="showPage('cartPage')">Quay lại giỏ hàng</button>
+            </form>
+        </section>
+
+        <!-- Orders Page -->
+        <section id="ordersPage" class="page" style="display:none;">
+            <h2>Đơn hàng của tôi</h2>
+            <div id="ordersList" class="orders-list"></div>
+
+            <div id="ordersEmpty" class="empty-message" style="display:none;">
+                <p>Bạn chưa có đơn hàng nào.</p>
+            </div>
+        </section>
+
+        <!-- Order Detail Page -->
+        <section id="orderDetailPage" class="page" style="display:none;">
+            <button class="btn btn-secondary" onclick="showPage('ordersPage')">← Quay lại</button>
+            <div id="orderDetail" class="order-detail"></div>
+        </section>
+
+        <!-- Admin Page -->
+        <section id="adminPage" class="page" style="display:none;">
+            <div class="admin-header">
+                <h1>Quản trị hệ thống</h1>
+                <p>Quản lý sản phẩm, đơn hàng và thống kê cửa hàng</p>
+            </div>
+
+            <div class="admin-tabs">
+                <button class="admin-tab active" onclick="switchAdminTab('dashboard')">Tổng quan</button>
+                <button class="admin-tab" onclick="switchAdminTab('products')">Sản phẩm</button>
+                <button class="admin-tab" onclick="switchAdminTab('orders')">Đơn hàng</button>
+            </div>
+
+            <!-- Dashboard Tab -->
+            <div id="dashboardTab" class="admin-tab-content active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Tổng sản phẩm</div>
+                        <div class="stat-value" id="statProducts">0</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-label">Tổng người dùng</div>
+                        <div class="stat-value" id="statUsers">0</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-label">Tổng đơn hàng</div>
+                        <div class="stat-value" id="statOrders">0</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-label">Tổng doanh thu</div>
+                        <div class="stat-value" id="statRevenue">0 đ</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Tab -->
+            <div id="productsTab" class="admin-tab-content" style="display:none;">
+                <div class="admin-products-header">
+                    <h2>Quản lý sản phẩm</h2>
+                    <button class="btn btn-primary" onclick="showAddProductForm()">+ Thêm sản phẩm mới</button>
+                </div>
+
+                <div id="addProductForm" class="form-card" style="display:none;">
+                    <h3 id="formTitle">Thêm sản phẩm mới</h3>
+
+                    <form id="adminProductForm">
+                        <div class="form-group">
+                            <label for="prodName">Tên sản phẩm *</label>
+                            <input type="text" id="prodName" placeholder="Nhập tên sản phẩm" required>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="prodPrice">Giá sản phẩm *</label>
+                                <input type="number" id="prodPrice" placeholder="Nhập giá" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prodStock">Số lượng tồn kho *</label>
+                                <input type="number" id="prodStock" placeholder="Nhập số lượng" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prodCategory">Danh mục *</label>
+                            <input type="text" id="prodCategory" placeholder="Ví dụ: Điện tử, Thời trang..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prodImage">Link hình ảnh *</label>
+                            <input type="url" id="prodImage" placeholder="https://..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prodDesc">Mô tả sản phẩm *</label>
+                            <textarea id="prodDesc" rows="4" placeholder="Nhập mô tả chi tiết sản phẩm" required></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" id="submitBtn" class="btn btn-primary">Thêm sản phẩm</button>
+                            <button type="reset" class="btn btn-secondary">Đặt lại</button>
+                            <button type="button" class="btn btn-outline" onclick="hideAddProductForm()">Hủy</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="adminProductsList" class="admin-products-list"></div>
+            </div>
+
+            <!-- Orders Tab -->
+            <div id="ordersTab" class="admin-tab-content" style="display:none;">
+                <div id="adminOrdersList" class="orders-list"></div>
+            </div>
+        </section>
+
+        <!-- Profile Page -->
+        <section id="profilePage" class="page" style="display:none;">
+            <div class="profile-card">
+                <h2>Thông tin tài khoản</h2>
+                <div id="userProfile"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Shop Online. Tất cả quyền được bảo lưu.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

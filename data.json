@@ -1,0 +1,207 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "email": "admin@shop.com",
+      "role": "admin",
+      "fullName": "Quản trị viên"
+    },
+    {
+      "id": 2,
+      "username": "user1",
+      "password": "user123",
+      "email": "user1@shop.com",
+      "role": "customer",
+      "fullName": "Nguyễn Văn A"
+    },
+    {
+      "id": 3,
+      "username": "Nguyendz",
+      "email": "nongvannguyen20202023@gmail.com",
+      "password": "123456a",
+      "fullName": "Nông Văn Nguyên",
+      "role": "customer"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop Dell XPS 13",
+      "price": 25000000,
+      "description": "Laptop cao cấp với hiệu năng mạnh",
+      "image": "Laptop Dell XPS 13.jfif",
+      "category": "Điện tử",
+      "stock": 10
+    },
+    {
+      "id": 2,
+      "name": "iPhone 15 Pro",
+      "price": 30000000,
+      "description": "Điện thoại thông minh mới nhất từ Apple. Camera 48MP, chip A17 Pro, thiết kế titanium sang trọng.",
+      "image": "iPhone 15 Pro.jfif",
+      "category": "Điện thoại",
+      "stock": 15
+    },
+    {
+      "id": 3,
+      "name": "AirPods Pro",
+      "price": 7500000,
+      "description": "Tai nghe không dây cao cấp",
+      "image": "AirPods Pro.jfif",
+      "category": "Âm thanh",
+      "stock": 20
+    },
+    {
+      "id": 4,
+      "name": "iPad Air",
+      "price": 18000000,
+      "description": "Máy tính bảng công nghệ",
+      "image": "iPad Air.jfif",
+      "category": "Máy tính bảng",
+      "stock": 8
+    },
+    {
+      "id": 5,
+      "name": "Samsung Galaxy S24 Ultra",
+      "price": 28000000,
+      "description": "Điện thoại flagship Samsung với camera 200MP, màn hình Dynamic AMOLED 2X 6.8 inch. Hiệu năng mạnh mẽ với Snapdragon 8 Gen 3.",
+      "image": "Samsung Galaxy S24 Ultra.jfif ",
+      "category": "Điện thoại",
+      "stock": 12
+    },
+    {
+      "id": 6,
+      "name": "iPhone 15",
+      "price": 22000000,
+      "description": "iPhone 15 phiên bản tiêu chuẩn. Camera kép 48MP, chip A16 Bionic, pin 3000mAh. Thiết kế nhôm bền bỉ.",
+      "image": "iPhone 15.jfif",
+      "category": "Điện thoại",
+      "stock": 20
+    },
+    {
+      "id": 7,
+      "name": "Xiaomi 14 Ultra",
+      "price": 15000000,
+      "description": "Điện thoại Xiaomi flagship với camera được phát triển cùng Leica. Màn hình AMOLED 6.73 inch 120Hz, pin 5000mAh.",
+      "image": "Xiaomi 14 Ultra.jfif",
+      "category": "Điện thoại",
+      "stock": 18
+    },
+    {
+      "id": 8,
+      "name": "Google Pixel 8 Pro",
+      "price": 24000000,
+      "description": "Điện thoại Google với AI mạnh mẽ. Camera 50MP, chip Tensor G3, màn hình OLED 6.7 inch. Cảm biến nhiệt độ độc quyền.",
+      "image": "Google Pixel 8 Pro.jfif",
+      "category": "Điện thoại",
+      "stock": 14
+    },
+    {
+      "id": 9,
+      "name": "OnePlus 12",
+      "price": 12000000,
+      "description": "OnePlus 12 với sạc nhanh 100W. Chip Snapdragon 8 Gen 3, RAM 12GB, pin 5400mAh. Hiệu năng gaming tuyệt vời.",
+      "image": "OnePlus 12.jfif",
+      "category": "Điện thoại",
+      "stock": 25
+    },
+    {
+      "id": 10,
+      "name": "Samsung Galaxy A54",
+      "price": 8000000,
+      "description": "Điện thoại tầm trung Samsung với camera 50MP. Chip Exynos 1280, pin 5000mAh, màn hình OLED 6.4 inch.",
+      "image": "Samsung Galaxy A54.jfif",
+      "category": "Điện thoại",
+      "stock": 30
+    },
+    {
+      "id": 11,
+      "name": "Vivo V29",
+      "price": 9500000,
+      "description": "Vivo V29 với camera 50MP Zeiss. Chip MediaTek Dimensity 8200, pin 5000mAh, sạc nhanh 80W. Thiết kế mỏng nhẹ.",
+      "image": "Vivo V29.jfif",
+      "category": "Điện thoại",
+      "stock": 22
+    },
+    {
+      "id": 12,
+      "name": "OPPO A78",
+      "price": 6500000,
+      "description": "OPPO A78 thiết kế tối ưu giá cả. Chip Snapdragon 680, pin 5000mAh, sạc nhanh 33W. Màn hình LCD 6.56 inch.",
+      "image": "OPPO A78.jfif",
+      "category": "Điện thoại",
+      "stock": 35
+    },
+    {
+      "id": 13,
+      "name": "iPhone 14 Pro Max",
+      "price": 26000000,
+      "description": "iPhone 14 Pro Max với màn hình lớn 6.7 inch. Camera 48MP, chip A16 Bionic, Dynamic Island. Thiết kế inox cao cấp.",
+      "image": "iPhone 14 Pro Max.jfif",
+      "category": "Điện thoại",
+      "stock": 11
+    },
+    {
+      "id": 14,
+      "name": "Xiaomi 13T Pro",
+      "price": 13000000,
+      "description": "Xiaomi 13T Pro với sạc nhanh 120W. Chip Snapdragon 8 Gen 2 Ultra, camera 50MP, pin 5000mAh. Màn hình AMOLED 120Hz.",
+      "image": "Xiaomi 13T Pro.jfif ",
+      "category": "Điện thoại",
+      "stock": 19
+    },
+    {
+      "id": 15,
+      "name": "Motorola Edge 50",
+      "price": 10500000,
+      "description": "Motorola Edge 50 với camera 50MP Zeiss. Chip Snapdragon 7 Gen 3, pin 5000mAh, sạc nhanh 68W. Chạy Android sạch.",
+      "image": "Motorola Edge 50.jfif",
+      "category": "Điện thoại",
+      "stock": 23
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 3,
+      "items": [
+        {
+          "id": 2,
+          "name": "iPhone 15 Pro",
+          "description": "Điện thoại thông minh mới nhất từ Apple. Camera 48MP, chip A17 Pro, thiết kế titanium sang trọng.",
+          "price": 30000000,
+          "image": "iPhone 15 Pro.jfif",
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 30030000,
+      "shippingAddress": "n\ndhws",
+      "paymentMethod": "cod",
+      "status": "pending",
+      "createdAt": "2026-03-26T20:23:32.337Z",
+      "updatedAt": "2026-03-26T20:23:32.337Z"
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "items": [
+        {
+          "id": 3,
+          "name": "AirPods Pro",
+          "price": 7500000,
+          "image": "AirPods Pro.jfif",
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 7530000,
+      "shippingAddress": "n\ndhws",
+      "paymentMethod": "cod",
+      "status": "pending",
+      "createdAt": "2026-03-26T21:02:18.077Z",
+      "updatedAt": "2026-03-26T21:02:18.077Z"
+    }
+  ],
+  "cart": {}
+}
