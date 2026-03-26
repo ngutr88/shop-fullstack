@@ -4,7 +4,7 @@ const cors = require("cors");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT =  process.env.PORT || 3000;
 const FILE = path.join(__dirname, "data.json");
 
 app.use(cors());
@@ -362,6 +362,8 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
+
+
 app.listen(PORT, () => {
-    console.log(`🚀 Server chay tai http://localhost:${PORT}`);
+    console.log(`🚀 Server chạy tại cổng ${PORT}`);
 });
