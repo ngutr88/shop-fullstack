@@ -2,7 +2,7 @@
 let currentUser = null;
 let cart = [];
 let editingProductId = null;
-const API = "http://localhost:3000/api";
+const API = `${window.location.origin}/api`;
 const DEFAULT_PRODUCT_IMAGE = "https://via.placeholder.com/300x300?text=No+Image";
 
 // ============ INITIALIZATION ============
