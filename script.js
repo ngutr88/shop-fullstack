@@ -43,6 +43,14 @@ function setupEventListeners() {
 
     // Search
     document.getElementById("searchInput")?.addEventListener("input", searchProducts);
+    document.getElementById("topSearchInput")?.addEventListener("input", e => {
+        const value = e.target.value;
+        const pageSearch = document.getElementById("searchInput");
+        if (pageSearch) {
+            pageSearch.value = value;
+        }
+        searchProducts();
+    });
 
     // Checkout
     document.getElementById("checkoutForm")?.addEventListener("submit", handleCheckout);

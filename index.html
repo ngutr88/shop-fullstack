@@ -10,7 +10,11 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">🛒 Shop Online</div>
+            <div class="nav-brand">ShopOnline.vn</div>
+
+            <div class="nav-search">
+                <input id="topSearchInput" type="text" placeholder="Tìm kiếm sản phẩm, thương hiệu...">
+            </div>
 
             <div class="nav-menu">
                 <button id="homeBtn" class="nav-link">Trang chủ</button>
@@ -35,12 +39,79 @@
         <!-- Home Page -->
         <section id="homePage" class="page" style="display:none;">
             <div class="hero">
-                <h1>Chào mừng đến với Shop Online</h1>
-                <p>Mua sắm dễ dàng, quản lý sản phẩm tiện lợi, giao diện đẹp và hiện đại.</p>
-                <button class="btn btn-primary" onclick="loadProducts()">Mua ngay</button>
-            </div>
-        </section>
+                    <h1>Mua sắm online, giá tốt mỗi ngày!</h1>
+                    <p>Siêu ưu đãi, giao hàng nhanh, hơn 1000 sản phẩm chất lượng.</p>
+                    <button class="btn btn-primary" onclick="loadProducts()">Mua ngay</button>
 
+                    <div class="hero-categories">
+                        <a href="#" class="category-chip">Điện thoại</a>
+                        <a href="#" class="category-chip">Phụ kiện</a>
+                        <a href="#" class="category-chip">Thời trang</a>
+                        <a href="#" class="category-chip">Gia dụng</a>
+                        <a href="#" class="category-chip">Khuyến mãi</a>
+                    </div>
+                </div>
+
+                <div class="home-top-cards">
+                    <div class="home-card">
+                        <div class="home-card-icon">🚚</div>
+                        <div>
+                            <h3>Miễn phí vận chuyển</h3>
+                            <p>Đơn từ 150k</p>
+                        </div>
+                    </div>
+                    <div class="home-card">
+                        <div class="home-card-icon">🔥</div>
+                        <div>
+                            <h3>Deal hot mỗi ngày</h3>
+                            <p>Giảm sâu đến 50%</p>
+                        </div>
+                    </div>
+                    <div class="home-card">
+                        <div class="home-card-icon">💳</div>
+                        <div>
+                            <h3>Thanh toán linh hoạt</h3>
+                            <p>COD, thẻ, chuyển khoản</p>
+                        </div>
+                    </div>
+                    <div class="home-card">
+                        <div class="home-card-icon">⭐</div>
+                        <div>
+                            <h3>Đổi trả dễ dàng</h3>
+                            <p>Trong 7 ngày</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="home-offers">
+                    <div class="home-offers-header">
+                        <h2>Flash Sale</h2>
+                        <button class="btn btn-secondary" onclick="loadProducts()">Xem tất cả</button>
+                    </div>
+                    <div class="offers-scroll">
+                        <div class="offer-card">
+                            <div class="offer-badge">-25%</div>
+                            <h3>Smartphone mới</h3>
+                            <p>Giảm sốc đến 2 giờ nữa</p>
+                        </div>
+                        <div class="offer-card">
+                            <div class="offer-badge">-40%</div>
+                            <h3>Tai nghe true wireless</h3>
+                            <p>Giá tốt nhất hôm nay</p>
+                        </div>
+                        <div class="offer-card">
+                            <div class="offer-badge">-30%</div>
+                            <h3>Phụ kiện công nghệ</h3>
+                            <p>Voucher thêm 50k</p>
+                        </div>
+                        <div class="offer-card">
+                            <div class="offer-badge">-20%</div>
+                            <h3>Đồ gia dụng</h3>
+                            <p>Miễn phí lắp đặt</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         <!-- Login Page -->
         <section id="loginPage" class="page" style="display:none;">
             <div class="auth-card">
@@ -279,7 +350,7 @@
             </div>
 
             <!-- Orders Tab -->
-            <div id="ordersTab" class="admin-tab-content" style="display:none;">
+            <div id="ordersTab" class="admin-tab-content" sty le="display:none;">
                 <div id="adminOrdersList" class="orders-list"></div>
             </div>
         </section>
@@ -288,7 +359,7 @@
         <section id="profilePage" class="page" style="display:none;">
             <div class="profile-card">
                 <h2>Thông tin tài khoản</h2>
-                <div id="userProfile"></div>
+                <div id="userProfile"></div> 
             </div>
         </section>
     </div>

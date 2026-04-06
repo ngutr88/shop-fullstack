@@ -23,6 +23,22 @@
       "password": "123456a",
       "fullName": "Nông Văn Nguyên",
       "role": "customer"
+    },
+    {
+      "id": 4,
+      "username": "Nguyendz1",
+      "email": "nongvannguyen2023@gmail.com",
+      "password": "12345678a",
+      "fullName": "Nông Văn Nguyênn",
+      "role": "customer"
+    },
+    {
+      "id": 5,
+      "username": "Nguyen124",
+      "email": "nongvannguyen2026@gmail.com",
+      "password": "12345678a",
+      "fullName": "Nguyenn",
+      "role": "customer"
     }
   ],
   "products": [
@@ -201,6 +217,63 @@
       "status": "pending",
       "createdAt": "2026-03-26T21:02:18.077Z",
       "updatedAt": "2026-03-26T21:02:18.077Z"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "items": [
+        {
+          "id": 14,
+          "name": "Xiaomi 13T Pro",
+          "price": 13000000,
+          "image": "Xiaomi 13T Pro.jfif ",
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 13030000,
+      "shippingAddress": "n\ndhws",
+      "paymentMethod": "cod",
+      "status": "pending",
+      "createdAt": "2026-04-04T03:35:53.748Z",
+      "updatedAt": "2026-04-04T03:35:53.748Z"
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "items": [
+        {
+          "id": 13,
+          "name": "iPhone 14 Pro Max",
+          "price": 26000000,
+          "image": "iPhone 14 Pro Max.jfif",
+          "quantity": 10
+        }
+      ],
+      "totalPrice": 260030000,
+      "shippingAddress": "n\ndhws",
+      "paymentMethod": "bank",
+      "status": "paid",
+      "createdAt": "2026-04-04T03:37:00.998Z",
+      "updatedAt": "2026-04-04T03:37:01.006Z"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "items": [
+        {
+          "id": 2,
+          "name": "iPhone 15 Pro",
+          "price": 30000000,
+          "image": "iPhone 15 Pro.jfif",
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 30030000,
+      "shippingAddress": "n\ndhws",
+      "paymentMethod": "bank",
+      "status": "paid",
+      "createdAt": "2026-04-04T03:42:50.477Z",
+      "updatedAt": "2026-04-04T03:42:50.484Z"
     }
   ],
   "cart": {}
